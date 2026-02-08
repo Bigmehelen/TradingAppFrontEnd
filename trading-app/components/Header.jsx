@@ -7,7 +7,7 @@ function Header() {
 
 
   return (
-    <header className="glass-dark" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
+    <header className="glass-dark" style={{ position: 'fixed', top: 0,left: 0, right: 0, zIndex: 50 }}>
       <nav style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '5rem' }}>
 
@@ -46,7 +46,20 @@ function Header() {
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-            <a href="#login" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', transition: 'color 0.3s' }}>
+            <a href="#login" style={{ display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '0.5rem',
+                                padding: '0.5rem 1.5rem',
+                                fontSize: '1.125rem',
+                                fontWeight: 600,
+                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                cursor: 'pointer',
+                                border: '2px solid var(--maven-border)',
+                                textDecoration: 'none',
+                                whiteSpace: 'nowrap',
+                                background: 'transparent',
+                                color: 'var(--maven-text-primary)' }}>
               Login
             </a>
             <a
@@ -107,32 +120,32 @@ function Header() {
           <div style={{ paddingTop: '1rem', paddingBottom: '1rem', borderTop: '1px solid var(--maven-border)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <a
-                href="#challenges"
+                href="#pricing"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Challenges
+                Pricing
               </a>
               <a
-                href="#how-it-works"
+                href="#aboutSection"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                How It Works
+                About Us
               </a>
               <a
-                href="#testimonials"
+                href="#talkToExpert"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Testimonials
+               Talk To Expert
               </a>
               <a
                 href="#about"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
+                About Us
               </a>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
                 <a

@@ -46,7 +46,7 @@ function Hero() {
 
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '5rem', animation: 'fadeIn 0.6s ease-out forwards', animationDelay: '0.3s', opacity: 0 }}>
                         <a
-                            href="#get-started"
+                            href="#"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
