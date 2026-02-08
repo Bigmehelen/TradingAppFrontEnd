@@ -3,16 +3,20 @@ import Hero from '../components/Hero';
 import Challenges from '../components/Challenges';
 import ProcessSteps from '../components/ProcessSteps';
 import Testimonials from '../components/Testimonials';
+import AboutSection from '../components/AboutSection';
+import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div style={{ minHeight: '100vh' }}>
       <Header />
       <Hero />
       <Challenges />
       <ProcessSteps />
       <Testimonials />
+      <AboutSection />
+      <FinalCTA />
       <Footer />
     </div>
   );
