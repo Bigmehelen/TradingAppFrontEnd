@@ -23,13 +23,13 @@ function Testimonials() {
     ];
 
     return (
-        <section id="testimonials" style={{ padding: '5rem 0', background: '#0a0a0a' }}>
+        <section id="testimonials" style={{ padding: '5rem 0', background: 'var(--maven-bg-secondary)' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h2 style={{ marginBottom: '1rem', color: '#ffffff', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                    <h2 style={{ marginBottom: '1rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                         Don't Just Take Our Word for It
                     </h2>
-                    <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: '#a3a3a3' }}>
+                    <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
                         Hear from our traders around the world why they chose Maven
                     </p>
                 </div>
@@ -38,12 +38,8 @@ function Testimonials() {
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
+                            className="glass-card"
                             style={{
-                                background: 'rgba(20, 20, 20, 0.4)',
-                                backdropFilter: 'blur(20px)',
-                                WebkitBackdropFilter: 'blur(20px)',
-                                border: '1px solid rgba(255, 255, 255, 0.05)',
-                                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
                                 borderRadius: '1.5rem',
                                 padding: '2rem',
                                 animation: 'fadeIn 0.6s ease-out forwards',
@@ -56,7 +52,7 @@ function Testimonials() {
                                 {[...Array(testimonial.rating)].map((_, i) => (
                                     <svg
                                         key={i}
-                                        style={{ width: '1.25rem', height: '1.25rem', color: '#f59e0b' }}
+                                        style={{ width: '1.25rem', height: '1.25rem', color: 'var(--maven-warning)' }}
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                     >
@@ -66,7 +62,7 @@ function Testimonials() {
                             </div>
 
                             {/* Quote */}
-                            <blockquote style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '1.5rem', color: '#ffffff', margin: '0 0 1.5rem 0' }}>
+                            <blockquote style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '1.5rem', color: 'var(--maven-text-primary)', margin: '0 0 1.5rem 0' }}>
                                 "{testimonial.quote}"
                             </blockquote>
 
@@ -81,16 +77,17 @@ function Testimonials() {
                                     justifyContent: 'center',
                                     fontSize: '1.125rem',
                                     fontWeight: 700,
-                                    background: 'linear-gradient(135deg, #00d4ff, #7c3aed)',
-                                    color: '#000'
+                                    fontWeight: 700,
+                                    background: 'linear-gradient(135deg, var(--maven-cyan), var(--maven-purple))',
+                                    color: '#ffffff'
                                 }}>
                                     {testimonial.author.charAt(0)}
                                 </div>
                                 <div>
-                                    <div style={{ fontWeight: 600, color: '#ffffff' }}>
+                                    <div style={{ fontWeight: 600, color: 'var(--maven-text-primary)' }}>
                                         {testimonial.author}
                                     </div>
-                                    <div style={{ fontSize: '0.875rem', color: '#737373' }}>
+                                    <div style={{ fontSize: '0.875rem', color: 'var(--maven-text-secondary)' }}>
                                         {testimonial.role}
                                     </div>
                                 </div>
@@ -108,7 +105,7 @@ function Testimonials() {
                             gap: '0.5rem',
                             fontWeight: 500,
                             transition: 'color 0.3s',
-                            color: '#00d4ff',
+                            color: 'var(--maven-cyan-dark)',
                             textDecoration: 'none'
                         }}
                     >

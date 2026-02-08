@@ -45,20 +45,20 @@ function ProcessSteps() {
     ];
 
     const gradientTextStyle = {
-        background: 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)',
+        background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text'
     };
 
     return (
-        <section id="how-it-works" style={{ padding: '5rem 0', background: '#1a1a1a' }}>
+        <section id="how-it-works" style={{ padding: '5rem 0', background: 'var(--maven-bg-primary)' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h2 style={{ marginBottom: '1rem', color: '#ffffff', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                    <h2 style={{ marginBottom: '1rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                         Real Trading Experience, Without the Risk
                     </h2>
-                    <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: '#a3a3a3' }}>
+                    <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
                         You're four steps away from harnessing your trading skills. It's simple. Here's how it works:
                     </p>
                 </div>
@@ -71,26 +71,26 @@ function ProcessSteps() {
                         >
                             {/* Connecting Line (hidden on last item and mobile) */}
                             {index < steps.length - 1 && (
-                                <div style={{ display: 'none', position: 'absolute', top: '4rem', left: '100%', width: '100%', height: '2px', transform: 'translateX(-50%)', zIndex: 0, background: 'linear-gradient(to right, #00d4ff, transparent)' }} className="connecting-line"></div>
+                                <div style={{ display: 'none', position: 'absolute', top: '4rem', left: '100%', width: '100%', height: '2px', transform: 'translateX(-50%)', zIndex: 0, background: 'linear-gradient(to right, var(--maven-cyan), transparent)' }} className="connecting-line"></div>
                             )}
 
                             {/* Step Card */}
-                            <div style={{ position: 'relative', borderRadius: '1.5rem', padding: '1.5rem', border: '1px solid #2a2a2a', transition: 'all 0.3s', height: '100%', background: '#141414' }}>
+                            <div style={{ position: 'relative', borderRadius: '1.5rem', padding: '1.5rem', border: '1px solid var(--maven-border)', transition: 'all 0.3s', height: '100%', background: 'var(--maven-bg-card)' }}>
                                 {/* Step Number */}
                                 <div style={{ fontSize: '3.75rem', fontWeight: 700, opacity: 0.2, position: 'absolute', top: '1rem', right: '1rem', ...gradientTextStyle }}>
                                     {step.number}
                                 </div>
 
                                 {/* Icon */}
-                                <div style={{ width: '4rem', height: '4rem', borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', position: 'relative', zIndex: 10, background: 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)', color: '#000' }}>
+                                <div style={{ width: '4rem', height: '4rem', borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', position: 'relative', zIndex: 10, background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)', color: '#ffffff' }}>
                                     {step.icon}
                                 </div>
 
                                 {/* Content */}
-                                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem', position: 'relative', zIndex: 10, color: '#ffffff' }}>
+                                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem', position: 'relative', zIndex: 10, color: 'var(--maven-text-primary)' }}>
                                     {step.title}
                                 </h3>
-                                <p style={{ fontSize: '0.875rem', position: 'relative', zIndex: 10, color: '#a3a3a3', margin: 0 }}>
+                                <p style={{ fontSize: '0.875rem', position: 'relative', zIndex: 10, color: 'var(--maven-text-secondary)', margin: 0 }}>
                                     {step.description}
                                 </p>
                             </div>
@@ -115,10 +115,9 @@ function ProcessSteps() {
                             border: 'none',
                             textDecoration: 'none',
                             whiteSpace: 'nowrap',
-                            background: '#00d4ff',
-                            color: '#000',
-                            boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
+                            boxShadow: '0 4px 20px rgba(0, 212, 255, 0.3)'
                         }}
+                        className="btn-primary"
                     >
                         Start Your Journey
                     </a>

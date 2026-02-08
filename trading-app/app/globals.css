@@ -5,10 +5,10 @@
    ============================================ */
 
 :root {
-  /* Maven Color Palette - Dark Theme */
-  --maven-bg-primary: #0a0a0a;
-  --maven-bg-secondary: #1a1a1a;
-  --maven-bg-card: #141414;
+  /* Maven Color Palette - Light Theme */
+  --maven-bg-primary: #ffffff;
+  --maven-bg-secondary: #f8f9fa;
+  --maven-bg-card: #ffffff;
 
   /* Maven Accent Colors */
   --maven-cyan: #00d4ff;
@@ -17,13 +17,13 @@
   --maven-purple-dark: #6d28d9;
 
   /* Text Colors */
-  --maven-text-primary: #ffffff;
-  --maven-text-secondary: #a3a3a3;
-  --maven-text-muted: #737373;
+  --maven-text-primary: #111827;
+  --maven-text-secondary: #4b5563;
+  --maven-text-muted: #9ca3af;
 
   /* Border Colors */
-  --maven-border: #2a2a2a;
-  --maven-border-light: #3a3a3a;
+  --maven-border: #e5e7eb;
+  --maven-border-light: #f3f4f6;
 
   /* Status Colors */
   --maven-success: #10b981;
@@ -118,8 +118,8 @@ p {
 
 .btn-primary {
   background: var(--maven-cyan);
-  color: #000;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
 }
 
 .btn-primary:hover {
@@ -153,7 +153,7 @@ p {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   border-color: var(--maven-cyan);
 }
 
@@ -196,18 +196,18 @@ p {
    ============================================ */
 
 .glass-dark {
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--maven-border);
 }
 
 .glass-card {
-  background: rgba(20, 20, 20, 0.4);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--maven-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 /* ============================================

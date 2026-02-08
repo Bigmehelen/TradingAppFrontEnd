@@ -2,14 +2,14 @@ import React from "react";
 
 function AboutSection() {
     return (
-        <section id="about" style={{ padding: '5rem 0', background: '#1a1a1a' }}>
+        <section id="about" style={{ padding: '5rem 0', background: 'var(--maven-bg-primary)' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{ maxWidth: '64rem', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                        <h2 style={{ marginBottom: '1.5rem', color: '#ffffff', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                        <h2 style={{ marginBottom: '1.5rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                             A Little About Us
                         </h2>
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.125rem', color: '#a3a3a3' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.125rem', color: 'var(--maven-text-secondary)' }}>
                             <p style={{ margin: 0 }}>
                                 Our team is dedicated to driving innovation and becoming the leading prop firm in the trading community.
                             </p>
@@ -36,12 +36,13 @@ function AboutSection() {
                                 borderRadius: '9999px',
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 cursor: 'pointer',
-                                border: '2px solid #3a3a3a',
+                                border: '2px solid var(--maven-border)',
                                 textDecoration: 'none',
                                 whiteSpace: 'nowrap',
                                 background: 'transparent',
-                                color: '#ffffff'
+                                color: 'var(--maven-text-primary)'
                             }}
+                            className="btn-secondary"
                         >
                             Learn More About Us
                         </a>

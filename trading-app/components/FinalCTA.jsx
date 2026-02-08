@@ -2,7 +2,7 @@ import React from "react";
 
 function FinalCTA() {
     return (
-        <section style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
+        <section style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden', background: 'var(--maven-bg-secondary)' }}>
             {/* Background Glow */}
             <div style={{ position: 'absolute', inset: 0, opacity: 0.2 }}>
                 <div style={{
@@ -14,16 +14,16 @@ function FinalCTA() {
                     height: '24rem',
                     borderRadius: '9999px',
                     filter: 'blur(3rem)',
-                    background: '#00d4ff'
+                    background: 'var(--maven-cyan)'
                 }}></div>
             </div>
 
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 10 }}>
                 <div style={{ maxWidth: '64rem', margin: '0 auto', textAlign: 'center' }}>
-                    <h2 style={{ marginBottom: '1.5rem', color: '#ffffff', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
+                    <h2 style={{ marginBottom: '1.5rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                         Are You Ready to Start Trading?
                     </h2>
-                    <p style={{ fontSize: '1.25rem', marginBottom: '3rem', color: '#a3a3a3', margin: '0 0 3rem 0' }}>
+                    <p style={{ fontSize: '1.25rem', marginBottom: '3rem', color: 'var(--maven-text-secondary)', margin: '0 0 3rem 0' }}>
                         Gain access to elite funding, cutting-edge tools, and the support of a whole community dedicated to your growth.
                     </p>
 
@@ -44,10 +44,10 @@ function FinalCTA() {
                                 border: 'none',
                                 textDecoration: 'none',
                                 whiteSpace: 'nowrap',
-                                background: '#00d4ff',
-                                color: '#000',
-                                boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
+                                whiteSpace: 'nowrap',
+                                boxShadow: '0 4px 20px rgba(0, 212, 255, 0.3)'
                             }}
+                            className="btn-primary"
                         >
                             Choose Your Challenge
                         </a>
@@ -64,12 +64,13 @@ function FinalCTA() {
                                 borderRadius: '9999px',
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 cursor: 'pointer',
-                                border: '2px solid #3a3a3a',
+                                border: '2px solid var(--maven-border)',
                                 textDecoration: 'none',
                                 whiteSpace: 'nowrap',
                                 background: 'transparent',
-                                color: '#ffffff'
+                                color: 'var(--maven-text-primary)'
                             }}
+                            className="btn-secondary"
                         >
                             Learn More
                         </a>
