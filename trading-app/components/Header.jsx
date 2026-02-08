@@ -1,17 +1,19 @@
+'use client';
 import React from "react";
 import { useState } from 'react';
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+
   return (
     <header className="glass-dark" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
       <nav style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '5rem' }}>
-          {/* Logo */}
+
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <a
-              href="#"
+              href="#hero"
               style={{
                 fontSize: '1.5rem',
                 fontWeight: 700,
@@ -26,25 +28,25 @@ function Header() {
             </a>
           </div>
 
-          {/* Desktop Navigation */}
+
           <div style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
-            <a href="#challenges" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Challenges
+            <a href="#pricing" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              Pricing
             </a>
-            <a href="#how-it-works" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              How It Works
+            <a href="#aboutSection" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              About Us
             </a>
-            <a href="#testimonials" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Testimonials
+            <a href="#talkToExperts" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              FAQ
             </a>
-            <a href="#about" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              About
+            <a href="#Contact" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              Contact
             </a>
           </div>
 
-          {/* CTA Buttons */}
+
           <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-            <a href="#login" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <a href="#login" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', transition: 'color 0.3s' }}>
               Login
             </a>
             <a
@@ -54,10 +56,10 @@ function Header() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '0.5rem',
-                padding: '1rem 2.5rem',
+                padding: '0.5rem 1.5rem',
                 fontSize: '1rem',
                 fontWeight: 600,
-                borderRadius: '9999px',
+                borderRadius: '8px',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 cursor: 'pointer',
                 boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
@@ -68,7 +70,7 @@ function Header() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+
           <button
             style={{ padding: '0.5rem', color: 'var(--maven-text-primary)', background: 'none', border: 'none', cursor: 'pointer' }}
             className="mobile-menu-btn"
@@ -100,7 +102,7 @@ function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+
         {mobileMenuOpen && (
           <div style={{ paddingTop: '1rem', paddingBottom: '1rem', borderTop: '1px solid var(--maven-border)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -132,37 +134,39 @@ function Header() {
               >
                 About
               </a>
-              <a
-                href="#login"
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Login
-              </a>
-              <a
-                href="#get-started"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.5rem',
-                  padding: '1rem 2.5rem',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  borderRadius: '9999px',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                  cursor: 'pointer',
-                  border: 'none',
-                  textDecoration: 'none',
-                  whiteSpace: 'nowrap',
-                  width: '100%',
-                  boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
-                }}
-                className="btn-primary"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Get Started
-              </a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
+                <a
+                  href="#login"
+                  style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', padding: '0.5rem 1rem', transition: 'color 0.3s' }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Login
+                </a>
+                <a
+                  href="#get-started"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    padding: '0.5rem 1.5rem',
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    borderRadius: '8px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer',
+                    border: 'none',
+                    textDecoration: 'none',
+                    whiteSpace: 'nowrap',
+                    flex: 1,
+                    boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
+                  }}
+                  className="btn-primary"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
         )}

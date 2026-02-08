@@ -3,7 +3,7 @@ import React from "react";
 function FinalCTA() {
     return (
         <section style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden', background: 'var(--maven-bg-secondary)' }}>
-            {/* Background Glow */}
+
             <div style={{ position: 'absolute', inset: 0, opacity: 0.2 }}>
                 <div style={{
                     position: 'absolute',
@@ -38,7 +38,7 @@ function FinalCTA() {
                                 padding: '1rem 2.5rem',
                                 fontSize: '1.125rem',
                                 fontWeight: 600,
-                                borderRadius: '9999px',
+                                borderRadius: '8px',
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 cursor: 'pointer',
                                 border: 'none',
@@ -61,7 +61,7 @@ function FinalCTA() {
                                 padding: '1rem 2.5rem',
                                 fontSize: '1.125rem',
                                 fontWeight: 600,
-                                borderRadius: '9999px',
+                                borderRadius: '8px',
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 cursor: 'pointer',
                                 border: '2px solid var(--maven-border)',

@@ -47,7 +47,7 @@ function Testimonials() {
                                 opacity: 0
                             }}
                         >
-                            {/* Stars */}
+
                             <div style={{ display: 'flex', gap: '0.25rem', marginBottom: '1rem' }}>
                                 {[...Array(testimonial.rating)].map((_, i) => (
                                     <svg
@@ -61,12 +61,12 @@ function Testimonials() {
                                 ))}
                             </div>
 
-                            {/* Quote */}
+
                             <blockquote style={{ fontSize: '1.125rem', fontWeight: 500, marginBottom: '1.5rem', color: 'var(--maven-text-primary)', margin: '0 0 1.5rem 0' }}>
                                 "{testimonial.quote}"
                             </blockquote>
 
-                            {/* Author */}
+
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                                 <div style={{
                                     width: '3rem',

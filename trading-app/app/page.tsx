@@ -1,9 +1,10 @@
 'use client';
+
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Challenges from '../components/Challenges';
+import TalkToExpert from '../components/TalkToExpert';
 import ProcessSteps from '../components/ProcessSteps';
-import Testimonials from '../components/Testimonials';
+import Pricing from '../components/Pricing';
 import AboutSection from '../components/AboutSection';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
@@ -13,9 +14,9 @@ function Home() {
     <div style={{ minHeight: '100vh' }}>
       <Header />
       <Hero />
-      <Challenges />
+      <Pricing />
+      <TalkToExpert />
       <ProcessSteps />
-      <Testimonials />
       <AboutSection />
       <FinalCTA />
       <Footer />

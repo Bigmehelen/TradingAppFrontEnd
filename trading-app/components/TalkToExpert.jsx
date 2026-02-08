@@ -1,7 +1,7 @@
 import React from "react";
 import ChallengeCard from './ChallengeCard';
 
-function Challenges() {
+function TalkToExperts() {
     const challenges = [
         {
             type: '1-Step Challenge',
@@ -114,5 +114,5 @@ function Challenges() {
     );
 }
 
-export default Challenges;
+export default TalkToExperts;
 

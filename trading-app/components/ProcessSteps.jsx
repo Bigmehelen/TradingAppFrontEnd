@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 
 function ProcessSteps() {
@@ -69,24 +70,23 @@ function ProcessSteps() {
                             key={index}
                             style={{ position: 'relative', animation: 'fadeIn 0.6s ease-out forwards', animationDelay: `${index * 0.1}s`, opacity: 0 }}
                         >
-                            {/* Connecting Line (hidden on last item and mobile) */}
+
                             {index < steps.length - 1 && (
                                 <div style={{ display: 'none', position: 'absolute', top: '4rem', left: '100%', width: '100%', height: '2px', transform: 'translateX(-50%)', zIndex: 0, background: 'linear-gradient(to right, var(--maven-cyan), transparent)' }} className="connecting-line"></div>
                             )}
 
-                            {/* Step Card */}
+
                             <div style={{ position: 'relative', borderRadius: '1.5rem', padding: '1.5rem', border: '1px solid var(--maven-border)', transition: 'all 0.3s', height: '100%', background: 'var(--maven-bg-card)' }}>
-                                {/* Step Number */}
+
                                 <div style={{ fontSize: '3.75rem', fontWeight: 700, opacity: 0.2, position: 'absolute', top: '1rem', right: '1rem', ...gradientTextStyle }}>
                                     {step.number}
                                 </div>
 
-                                {/* Icon */}
+
                                 <div style={{ width: '4rem', height: '4rem', borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem', position: 'relative', zIndex: 10, background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)', color: '#ffffff' }}>
                                     {step.icon}
                                 </div>
 
-                                {/* Content */}
                                 <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.75rem', position: 'relative', zIndex: 10, color: 'var(--maven-text-primary)' }}>
                                     {step.title}
                                 </h3>
