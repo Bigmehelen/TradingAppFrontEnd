@@ -1,4 +1,6 @@
-export default function ChallengeCard({ type, badge, accountSizes, features, popular }) {
+import React from "react";
+
+function ChallengeCard({ type, badge, accountSizes, features, popular }) {
     const cardStyle = {
         background: '#141414',
         borderRadius: '1rem',
@@ -81,3 +83,5 @@ export default function ChallengeCard({ type, badge, accountSizes, features, pop
         </div>
     );
 }
+
+export default ChallengeCard;

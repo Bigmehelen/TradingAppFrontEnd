@@ -1,3 +1,4 @@
+'use client';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Challenges from '../components/Challenges';
@@ -7,7 +8,7 @@ import AboutSection from '../components/AboutSection';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
 
-export default function Home() {
+function Home() {
   return (
     <div style={{ minHeight: '100vh' }}>
       <Header />
@@ -21,3 +22,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

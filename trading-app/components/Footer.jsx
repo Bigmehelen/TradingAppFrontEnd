@@ -1,4 +1,6 @@
-export default function Footer() {
+import React from "react";
+
+function Footer() {
     const gradientTextStyle = {
         background: 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)',
         WebkitBackgroundClip: 'text',
@@ -157,3 +159,4 @@ export default function Footer() {
         </footer>
     );
 }
+export default Footer;

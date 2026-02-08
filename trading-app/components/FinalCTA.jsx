@@ -1,4 +1,6 @@
-export default function FinalCTA() {
+import React from "react";
+
+function FinalCTA() {
     return (
         <section style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden', background: '#0a0a0a' }}>
             {/* Background Glow */}
@@ -77,3 +79,4 @@ export default function FinalCTA() {
         </section>
     );
 }
+export default FinalCTA;

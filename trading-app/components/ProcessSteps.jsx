@@ -1,4 +1,6 @@
-export default function ProcessSteps() {
+import React from "react";
+
+function ProcessSteps() {
     const steps = [
         {
             number: '01',
@@ -133,3 +135,4 @@ export default function ProcessSteps() {
         </section>
     );
 }
+export default ProcessSteps;

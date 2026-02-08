@@ -1,6 +1,7 @@
+import React from "react";
 import ChallengeCard from './ChallengeCard';
 
-export default function Challenges() {
+function Challenges() {
     const challenges = [
         {
             type: '1-Step Challenge',
@@ -111,3 +112,6 @@ export default function Challenges() {
         </section>
     );
 }
+
+export default Challenges;
+

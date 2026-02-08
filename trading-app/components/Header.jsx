@@ -1,8 +1,7 @@
-'use client';
-
+import React from "react";
 import { useState } from 'react';
 
-export default function Header() {
+function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -188,3 +187,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header;

@@ -1,4 +1,6 @@
-export default function Hero() {
+import React from "react";
+
+function Hero() {
     const gradientTextStyle = {
         background: 'linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%)',
         WebkitBackgroundClip: 'text',
@@ -128,3 +130,4 @@ export default function Hero() {
         </section>
     );
 }
+export default Hero;

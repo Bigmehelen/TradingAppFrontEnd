@@ -1,4 +1,6 @@
-export default function Testimonials() {
+import React from "react";
+
+function Testimonials() {
     const testimonials = [
         {
             quote: "Everything goes smooth, from passing your challenge to getting your funded account.",
@@ -120,3 +122,4 @@ export default function Testimonials() {
         </section>
     );
 }
+export default Testimonials;

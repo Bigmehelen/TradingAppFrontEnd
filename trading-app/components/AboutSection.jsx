@@ -1,4 +1,6 @@
-export default function AboutSection() {
+import React from "react";
+
+function AboutSection() {
     return (
         <section id="about" style={{ padding: '5rem 0', background: '#1a1a1a' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
@@ -49,3 +51,5 @@ export default function AboutSection() {
         </section>
     );
 }
+
+export default AboutSection;
