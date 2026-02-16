@@ -8,17 +8,19 @@ import Pricing from '../components/Pricing';
 import AboutSection from '../components/AboutSection';
 import FinalCTA from '../components/FinalCTA';
 import Footer from '../components/Footer';
+import Contact from '@/components/Contact';
 
 function Home() {
   return (
     <div style={{ minHeight: '100vh' }}>
       <Header />
       <Hero />
+      <AboutSection />
       <Pricing />
       <TalkToExpert />
       <ProcessSteps />
-      <AboutSection />
       <FinalCTA />
+      <Contact />
       <Footer />
     </div>
   );

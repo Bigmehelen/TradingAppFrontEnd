@@ -1,6 +1,6 @@
 import React from "react";
 
-function Testimonials() {
+function Pricing() {
     const testimonials = [
         {
             quote: "Everything goes smooth, from passing your challenge to getting your funded account.",
@@ -119,4 +119,4 @@ function Testimonials() {
         </section>
     );
 }
-export default Testimonials;
+export default Pricing;
