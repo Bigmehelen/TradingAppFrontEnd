@@ -1,9 +1,25 @@
 'use client';
 import React from "react";
 import { useState } from 'react';
+import Link from 'next/link';
 
-function Header() {
+function Header({ onContactClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80; // Height of fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
 
   return (
@@ -24,34 +40,36 @@ function Header() {
                 textDecoration: 'none'
               }}
             >
-              Maven (Debug Mode)
+              Maven
             </a>
           </div>
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
-            <a href="#aboutSection" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
               About Us
             </a>
-            <a href="#pricing " style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <a href="#testimonials" onClick={(e) => handleSmoothScroll(e, 'testimonials')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
               Pricing
             </a>
-            <a href="#ChallengeCard" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <a href="#challenges" onClick={(e) => handleSmoothScroll(e, 'challenges')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
               FAQ
             </a>
-            <a href="#contact" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              Contact Us 
-            </a>
+            <button onClick={onContactClick} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', background: 'none', border: 'none', cursor: 'pointer' }}>
+              Contact Us
+            </button>
           </div>
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-            <a href="#login" style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', 
-              border: '1px solid var(--maven-text-secondary)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'color 0.3s' }}>
+            <Link href="/login" style={{
+              fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none',
+              border: '1px solid var(--maven-text-secondary)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'color 0.3s'
+            }}>
               Login
-            </a>
-            <a
-              href="#get-started"
+            </Link>
+            <Link
+              href="/register"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -63,12 +81,13 @@ function Header() {
                 borderRadius: '8px',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 cursor: 'pointer',
-                boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
+                boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)',
+                textDecoration: 'none'
               }}
               className="btn-primary"
             >
               Get Started
-            </a>
+            </Link>
           </div>
 
 
@@ -108,43 +127,42 @@ function Header() {
           <div style={{ paddingTop: '1rem', paddingBottom: '1rem', borderTop: '1px solid var(--maven-border)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <a
-                href="#challenges"
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
-                onClick={() => setMobileMenuOpen(false)}
+                href="#about"
+                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}
+                onClick={(e) => { handleSmoothScroll(e, 'about'); setMobileMenuOpen(false); }}
               >
-                Challenges
-              </a>
-              <a
-                href="#how-it-works"
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                How It Works
+                About Us
               </a>
               <a
                 href="#testimonials"
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
-                onClick={() => setMobileMenuOpen(false)}
+                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}
+                onClick={(e) => { handleSmoothScroll(e, 'testimonials'); setMobileMenuOpen(false); }}
               >
-                Testimonials
+                Pricing
               </a>
               <a
-                href="#about"
-                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}
-                onClick={() => setMobileMenuOpen(false)}
+                href="#challenges"
+                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}
+                onClick={(e) => { handleSmoothScroll(e, 'challenges'); setMobileMenuOpen(false); }}
               >
-                About
+                FAQ
               </a>
+              <button
+                onClick={() => { onContactClick(); setMobileMenuOpen(false); }}
+                style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}
+              >
+                Contact Us
+              </button>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
-                <a
-                  href="#login"
+                <Link
+                  href="/login"
                   style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', padding: '0.5rem 1rem', transition: 'color 0.3s' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Login
-                </a>
-                <a
-                  href="#get-started"
+                </Link>
+                <Link
+                  href="/register"
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -166,7 +184,7 @@ function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Started
-                </a>
+                </Link>
               </div>
             </div>
           </div>
