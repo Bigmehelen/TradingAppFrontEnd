@@ -10,7 +10,7 @@ function Header({ onContactClick }) {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const headerOffset = 80; // Height of fixed header
+      const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -62,14 +62,14 @@ function Header({ onContactClick }) {
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-            <Link href="/login" style={{
+            <Link href="/auth/login" style={{
               fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none',
               border: '1px solid var(--maven-text-secondary)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'color 0.3s'
             }}>
               Login
             </Link>
             <Link
-              href="/register"
+              href="/auth/register"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
