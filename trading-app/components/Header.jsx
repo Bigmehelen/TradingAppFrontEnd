@@ -21,7 +21,6 @@ function Header({ onContactClick }) {
     }
   };
 
-
   return (
     <header className="glass-dark" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}>
       <nav style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>

@@ -60,14 +60,16 @@ function RegisterPage() {
             <div className="hidden lg:flex w-1/2 relative flex-col justify-between p-12 bg-gray-900 overflow-hidden items-center text-center">
 
                 <div className="absolute inset-0 bg-gray-900">
-                    <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-indigo-900/40 via-purple-900/40 to-[#00a8cc] opacity-60"></div>
+                    <div className="absolute top-0 left-0 w-full h-full bg-linear-to-tr from-indigo-900/40 via-purple-900/40 to-[#00a8cc] opacity-60"></div>
 
-                    <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] rounded-full blur-[120px] animate-float-delayed"
-                        style={{ background: '#00d4ff', opacity: 0.15 }}></div>
+                    <div className="absolute bottom-[-10%] left-[-10%] w-200 h-200 rounded-full blur-[120px] animate-float-delayed"
+                        style={{ background: '#00d4ff', opacity: 0.15 }}>
+
+                    </div>
                 </div>
 
                 <div className="relative z-10">
-                    <h2 className="text-3xl mt-20 font-bold text-white tracking-tight">Maven Trading</h2>
+                    <h2 className="text-3xl mt-20 font-bold text-white tracking-tight"> CoolPay Trading</h2>
                 </div>
 
                 <div className="relative z-10 max-w-lg">
@@ -94,7 +96,7 @@ function RegisterPage() {
                 </div>
 
                 <div className="relative z-10 text-sm text-gray-500">
-                    © {new Date().getFullYear()} Maven Trading. All rights reserved.
+                    © {new Date().getFullYear()} CoolPay Trading. All rights reserved.
                 </div>
             </div>
 
@@ -111,14 +113,14 @@ function RegisterPage() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-8">
-                        <div className="space-y-3">
-                            <label className="text-base font-bold text-gray-900 ml-1"> Your name</label>
+                        <div className="space-y-4">
+                            <label className="text-base font-bold text-gray-900 ml-1"> name</label>
                             <input
                                 type="text"
                                 value={formData.name}
                                 onChange={(e) => handleChange('name', e.target.value)}
                                 placeholder="John Doe"
-                                className={`w-full h-16 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.name
+                                className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.name
                                     ? 'border-red-500'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                     }`}
@@ -126,14 +128,14 @@ function RegisterPage() {
                             {errors.name && <p className="text-red-500 text-sm ml-1">{errors.name}</p>}
                         </div>
 
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                             <label className="text-base font-bold text-gray-900 ml-1">Email Address</label>
                             <input
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => handleChange('email', e.target.value)}
                                 placeholder="name@company.com"
-                                className={`w-full bg-white h-16 border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
+                                className={`w-full bg-white h-14 border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
                                     ? 'border-red-500'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                     }`}
@@ -142,27 +144,27 @@ function RegisterPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="space-y-3">
+                            <div className="space-y-4">
                                 <label className="text-base font-bold text-gray-900 ml-1">Password</label>
                                 <input
                                     type="password"
                                     value={formData.password}
                                     onChange={(e) => handleChange('password', e.target.value)}
                                     placeholder="••••••••"
-                                    className={`w-full h-16 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
+                                    className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
                                         ? 'border-red-500'
                                         : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                         }`}
                                 />
                             </div>
-                            <div className="space-y-3">
+                            <div className="space-y-4">
                                 <label className="text-base font-bold text-gray-900 ml-1">Confirm</label>
                                 <input
                                     type="password"
                                     value={formData.confirmPassword}
                                     onChange={(e) => handleChange('confirmPassword', e.target.value)}
                                     placeholder="••••••••"
-                                    className={`w-full h-16 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.confirmPassword
+                                    className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.confirmPassword
                                         ? 'border-red-500'
                                         : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                         }`}
@@ -172,7 +174,7 @@ function RegisterPage() {
 
 
                         {formData.password && (
-                            <div className="space-y-1">
+                            <div className="space-y-4">
                                 <div className="flex gap-1 h-1.5">
                                     {[1, 2, 3, 4].map((level) => (
                                         <div key={level} className={`flex-1 rounded-full transition-all duration-300 ${level <= passwordStrength.strength ? passwordStrength.color : 'bg-gray-100'}`} />
@@ -186,7 +188,7 @@ function RegisterPage() {
                         )}
 
 
-                        <div className="space-y-2">
+                        <div className="space-y-4">
                             <label className="flex items-start gap-3 cursor-pointer group">
                                 <div className="relative flex items-center mt-4">
                                     <input

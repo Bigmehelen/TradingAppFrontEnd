@@ -14,7 +14,7 @@ function AboutSection() {
                                 Our team is dedicated to driving innovation and becoming the leading prop firm in the trading community.
                             </p>
                             <p style={{ margin: 0 }}>
-                                At Maven, our mission is to empower traders by providing them with the resources they need to succeed.
+                                At CoolPay, our mission is to empower traders by providing them with the resources they need to succeed.
                             </p>
                             <p style={{ margin: 0 }}>
                                 We prioritize transparency and risk management, ensuring a supportive environment for long-term growth.

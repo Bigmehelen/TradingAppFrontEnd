@@ -37,31 +37,32 @@ function LoginPage() {
 
             <div className="hidden lg:flex w-1/2 relative flex-col justify-between p-12 bg-gray-900 overflow-hidden items-center text-center">
 
-                <div className="absolute inset-0 mt-20 bg-gray-900">
-                    <div className="absolute top-0 mt-20left-0 w-full h-full bg-gradient-to-br from-indigo-900/40 via-purple-900/40 to-[#00a8cc] opacity-60"></div>
+                <div className="absolute inset-0 bg-gray-900">
+                    <div className="absolute top-0 left-0 w-full h-full bg-linear-to-tr from-indigo-900/40 via-purple-900/40 to-[#00a8cc] opacity-60"></div>
 
-                    <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] rounded-full blur-[120px] animate-pulse-glow"
-                        style={{ background: '#00d4ff', opacity: 0.15 }}></div>
+                    <div className="absolute bottom-[-10%] left-[-10%] w-200 h-200 rounded-full blur-[120px] animate-float-delayed"
+                        style={{ background: '#00d4ff', opacity: 0.15 }}>
+                    </div>
                 </div>
 
                 <div className="relative mt-20 z-10">
-                    <h2 className="text-3xl font-bold mt-20 text-white tracking-tight">Maven Trading</h2>
+                    <h2 className="text-3xl font-bold mt-20 text-white tracking-tight"> CoolPay Trading</h2>
                 </div>
 
                 <div className="relative z-10 max-w-lg">
-                    <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-3xl font-bold text-white mb-6 leading-tight">
                         Unlock your full <br />
                         <span className="text-[#00d4ff]">
                             trading potential.
                         </span>
                     </h1>
-                    <p className="text-gray-400 text-lg leading-relaxed">
-                        Join thousands of traders who have trusted Maven Trading to take their career to the next level. Experience superior execution and premium support.
+                    <p className="text-gray-500 drop-shadow-lg text-lg mt-10 leading-relaxed">
+                        Join thousands of traders who have trusted CoolPay Trading to take their career to the next level. Experience superior execution and premium support.
                     </p>
                 </div>
 
                 <div className="relative z-10 text-sm m-50 text-gray-500">
-                    © {new Date().getFullYear()} Maven Trading. All rights reserved.
+                    © {new Date().getFullYear()} CoolPay Trading. All rights reserved.
                 </div>
             </div>
 
@@ -72,19 +73,19 @@ function LoginPage() {
 
                 <div className="w-full max-w-xl space-y-10 relative z-10">
                     <div className="text-center lg:text-left">
-                        <h2 className="text-5xl font-bold text-gray-900 mb-3">Welcome Back</h2>
-                        <p className="text-gray-500 text-3xl">Please enter your details to sign in.</p>
+                        <h2 className="text-5xl font-bold text-gray-900 mb-3"> Welcome Back </h2>
+                        <p className="text-gray-500 text-3xl"> Please enter your details to sign in.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-8">
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                             <label className="text-base font-bold text-gray-900 ml-1">Email Address</label>
                             <input
                                 type="email"
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setErrors({ ...errors, email: '' }); }}
                                 placeholder="name@company.com"
-                                className={`w-full h-16 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
+                                className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
                                     ? 'border-red-500 focus:shadow-lg focus:shadow-red-100'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                     }`}
@@ -92,7 +93,7 @@ function LoginPage() {
                             {errors.email && <p className="text-red-500 text-sm ml-1 font-medium">{errors.email}</p>}
                         </div>
 
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <label className="text-base font-bold text-gray-900 ml-1">Password</label>
                             </div>
@@ -101,7 +102,7 @@ function LoginPage() {
                                 value={password}
                                 onChange={(e) => { setPassword(e.target.value); setErrors({ ...errors, password: '' }); }}
                                 placeholder="••••••••"
-                                className={`w-full h-16 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
+                                className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
                                     ? 'border-red-500 focus:shadow-lg focus:shadow-red-100'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
                                     }`}
@@ -135,7 +136,7 @@ function LoginPage() {
                         <button
                             type="submit"
                             disabled={isLoading}
-                            className="group relative w-full h-16 bg-gray-900 text-white text-xl font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/30 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed mt-8"
+                            className="group relative w-full h-14 bg-gray-900 text-white text-xl font-bold rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/30 active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed mt-8"
                         >
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                                 style={{ background: '#00d4ff' }}></div>
