@@ -84,7 +84,7 @@ function LoginPage() {
                                 type="email"
                                 value={email}
                                 onChange={(e) => { setEmail(e.target.value); setErrors({ ...errors, email: '' }); }}
-                                placeholder="name@company.com"
+                                placeholder="  name@company.com"
                                 className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
                                     ? 'border-red-500 focus:shadow-lg focus:shadow-red-100'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
@@ -101,7 +101,7 @@ function LoginPage() {
                                 type="password"
                                 value={password}
                                 onChange={(e) => { setPassword(e.target.value); setErrors({ ...errors, password: '' }); }}
-                                placeholder="••••••••"
+                                placeholder="  ••••••••"
                                 className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
                                     ? 'border-red-500 focus:shadow-lg focus:shadow-red-100'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'

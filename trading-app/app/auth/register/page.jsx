@@ -119,7 +119,7 @@ function RegisterPage() {
                                 type="text"
                                 value={formData.name}
                                 onChange={(e) => handleChange('name', e.target.value)}
-                                placeholder="John Doe"
+                                placeholder="  John Doe"
                                 className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.name
                                     ? 'border-red-500'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
@@ -134,7 +134,7 @@ function RegisterPage() {
                                 type="email"
                                 value={formData.email}
                                 onChange={(e) => handleChange('email', e.target.value)}
-                                placeholder="name@company.com"
+                                placeholder=" name@company.com"
                                 className={`w-full bg-white h-14 border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.email
                                     ? 'border-red-500'
                                     : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
@@ -150,7 +150,7 @@ function RegisterPage() {
                                     type="password"
                                     value={formData.password}
                                     onChange={(e) => handleChange('password', e.target.value)}
-                                    placeholder="••••••••"
+                                    placeholder="  ••••••••"
                                     className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.password
                                         ? 'border-red-500'
                                         : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
@@ -163,7 +163,7 @@ function RegisterPage() {
                                     type="password"
                                     value={formData.confirmPassword}
                                     onChange={(e) => handleChange('confirmPassword', e.target.value)}
-                                    placeholder="••••••••"
+                                    placeholder="  ••••••••"
                                     className={`w-full h-14 bg-white border-2 rounded-xl px-6 py-5 outline-none transition-all duration-300 font-medium text-xl ${errors.confirmPassword
                                         ? 'border-red-500'
                                         : 'border-gray-300 focus:border-[#00d4ff] focus:shadow-lg focus:shadow-cyan-100 hover:border-cyan-200'
