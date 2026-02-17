@@ -30,7 +30,7 @@ function Pricing() {
                         Don't Just Take Our Word for It
                     </h2>
                     <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
-                        Hear from our traders around the world why they chose Maven
+                        Hear from our traders around the world why they chose CoolPay
                     </p>
                 </div>
 

@@ -46,7 +46,7 @@ const Contact = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-white animate-fade-in overflow-hidden w-full h-full">
+    <div className="fixed inset-0 z-50 bg-white animate-fade-in w-full h-full overflow-y-auto overscroll-contain">
 
       <button
         onClick={onClose}
@@ -58,25 +58,24 @@ const Contact = ({ isOpen, onClose }) => {
         </svg>
       </button>
 
-      <div className="flex flex-col lg:flex-row min-h-screen w-full">
+      <div className="flex flex-col lg:flex-row h-full w-full overflow-y-auto">
 
-        {/* LEFT SIDE - Info & Context */}
         <div className="relative w-full lg:w-5/12 p-10 md:p-16 lg:p-24 flex flex-col justify-center items-center text-center gap-12 overflow-hidden bg-gray-50 border-r border-gray-100">
 
-          {/* Background Decorations */}
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-50/50 via-purple-50/50 to-pink-50/50 animate-gradient-shift"></div>
+
+          <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-indigo-50/50 via-purple-50/50 to-pink-50/50 animate-gradient-shift"></div>
           <div className="absolute top-[-10%] right-[-10%] w-96 h-96 rounded-full blur-[80px] animate-float" style={{ background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)', opacity: 0.2 }}></div>
           <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-pink-400/10 rounded-full blur-[80px] animate-float-delayed"></div>
 
           <div className="relative z-10 space-y-12 lg:space-y-16 mt-12 lg:mt-0 w-full flex flex-col items-center">
-            {/* Header */}
+
             <div className="space-y-6 max-w-lg mx-auto">
-              <span className="inline-block py-1.5 px-4 rounded-full bg-purple-100 border border-purple-200 text-xs font-bold uppercase tracking-wider text-purple-700">
+              <span className="inline-block py-1.5 px-8 rounded-full bg-purple-100 border border-purple-200 text-lg font-bold uppercase tracking-wider text-purple-700">
                 Contact Us
               </span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-[1.05]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.05]">
                 We're always <br />
-                <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)' }}>
+                <span className="text-transparent bg-clip-text" style={{backgroundImage: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)' }}>
                   here to help.
                 </span>
               </h2>
@@ -85,10 +84,10 @@ const Contact = ({ isOpen, onClose }) => {
               </p>
             </div>
 
-            {/* Discord CTA */}
+
             <div className="bg-white/80 backdrop-blur-md border border-purple-100 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-1 max-w-md mx-auto w-full">
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors">Join the Community</h3>
-              <p className="text-base text-gray-600 mb-6">Get the fastest support and connect with fellow traders on our exclusive Discord server.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors"> Join the Community </h3>
+              <p className="text-base text-gray-600 mb-6"> Get the fastest support and connect with fellow traders on our exclusive Discord server.</p>
               <a
                 href="#"
                 className="inline-flex items-center gap-3 text-base font-bold text-white bg-[#5865F2] hover:bg-[#4752C4] py-3 px-6 rounded-xl transition-all shadow-lg shadow-indigo-200 hover:shadow-indigo-300"
@@ -98,33 +97,33 @@ const Contact = ({ isOpen, onClose }) => {
               </a>
             </div>
 
-            {/* Footer Info */}
+
             <div className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-colors duration-300 max-w-sm mx-auto text-left">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl shrink-0 shadow-sm text-purple-600">📍</div>
               <div>
-                <h4 className="font-bold text-gray-900 text-lg">Maven Headquarters</h4>
+                <h4 className="font-bold text-gray-900 text-lg"> Coolpay Headquarters </h4>
                 <p className="text-gray-500 leading-relaxed mt-1">
                   DSO-IFZA, IFZA Properties<br />
-                  Silicon Oasis, Dubai
+                  Silicon Oasis, Dubai, UAE
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* RIGHT SIDE - Form */}
-        <div className="relative w-full lg:w-7/12 bg-white flex flex-col justify-center items-center p-10 md:p-16 lg:p-24 overflow-y-auto">
+
+        <div className="relative w-full lg:w-7/12 bg-white flex flex-col justify-center items-center p-15 md:p-20 lg:p-24 overflow-y-auto overscroll-contain">
 
           <div className="w-full max-w-xl space-y-8 animate-fade-in-up">
             <div className="mb-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-3">Send us a message</h3>
-              <p className="text-lg text-gray-500">Fill out the form below and we'll get back to you shortly.</p>
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Send us a message</h3>
+              <p className="text-xs text-gray-500"> Fill out the form below and we'll get back to you shortly. </p>
             </div>
 
             <form onSubmit={onSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-900 ml-1">Your Name</label>
+             
+                <div className="space-y-4">
+                  <label className="text-sm font-bold text-gray-900 ml-1"> Name</label>
                   <input
                     type="text"
                     name="name"
@@ -132,10 +131,10 @@ const Contact = ({ isOpen, onClose }) => {
                     required
                     onFocus={() => setFocusedField('name')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full bg-gray-50 border-2 rounded-xl px-5 py-4 outline-none transition-all duration-300 font-medium ${focusedField === 'name' ? 'border-purple-500 shadow-lg shadow-purple-100' : 'border-gray-100 hover:border-purple-200'}`}
+                    className={`w-full bg-gray-50 h-15 border-2 rounded-xl px-5 py-4 outline-none transition-all duration-300 font-medium ${focusedField === 'name' ? 'border-purple-500 shadow-lg shadow-purple-100' : 'border-gray-100 hover:border-purple-200'}`}
                   />
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-4">
                   <label className="text-sm font-bold text-gray-900 ml-1">Email Address</label>
                   <input
                     type="email"
@@ -144,12 +143,12 @@ const Contact = ({ isOpen, onClose }) => {
                     required
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full bg-gray-50 border-2 rounded-xl px-5 py-4 outline-none transition-all duration-300 font-medium ${focusedField === 'email' ? 'border-purple-500 shadow-lg shadow-purple-100' : 'border-gray-100 hover:border-purple-200'}`}
+                    className={`w-full bg-gray-50 h-15 border-2 rounded-xl px-5 py-4 outline-none transition-all duration-300 font-medium ${focusedField === 'email' ? 'border-purple-500 shadow-lg shadow-purple-100' : 'border-gray-100 hover:border-purple-200'}`}
                   />
                 </div>
-              </div>
+              
 
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <label className="text-sm font-bold text-gray-900 ml-1">Subject</label>
                 <div className="relative">
                   <select
@@ -167,7 +166,7 @@ const Contact = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-4">
                 <label className="text-sm font-bold text-gray-900 ml-1">Your Message</label>
                 <textarea
                   name="message"
@@ -182,7 +181,7 @@ const Contact = ({ isOpen, onClose }) => {
 
               <button
                 type="submit"
-                className="group relative w-full py-5 bg-gray-900 text-white font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] mt-4"
+                className="group relative h-15 w-full py-5 bg-gray-900 text-white font-bold text-lg rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 active:scale-[0.98] mt-4"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)' }}></div>

@@ -40,13 +40,13 @@ function Header({ onContactClick }) {
                 textDecoration: 'none'
               }}
             >
-              Maven
+              CoolPay
             </a>
           </div>
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
-            <a href="#about" onClick={(e) => handleSmoothScroll(e, 'about')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
+            <a href="#aboutsection" onClick={(e) => handleSmoothScroll(e, 'about')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
               About Us
             </a>
             <a href="#testimonials" onClick={(e) => handleSmoothScroll(e, 'testimonials')} style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}>
@@ -127,16 +127,16 @@ function Header({ onContactClick }) {
           <div style={{ paddingTop: '1rem', paddingBottom: '1rem', borderTop: '1px solid var(--maven-border)' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <a
-                href="#about"
+                href="#aboutsection"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}
-                onClick={(e) => { handleSmoothScroll(e, 'about'); setMobileMenuOpen(false); }}
+                onClick={(e) => { handleSmoothScroll(e, 'aboutSection'); setMobileMenuOpen(false); }}
               >
                 About Us
               </a>
               <a
-                href="#testimonials"
+                href="#pricing"
                 style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', transition: 'color 0.3s', cursor: 'pointer' }}
-                onClick={(e) => { handleSmoothScroll(e, 'testimonials'); setMobileMenuOpen(false); }}
+                onClick={(e) => { handleSmoothScroll(e, 'pricing'); setMobileMenuOpen(false); }}
               >
                 Pricing
               </a>

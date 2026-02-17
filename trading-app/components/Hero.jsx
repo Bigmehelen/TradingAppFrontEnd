@@ -34,7 +34,7 @@ function Hero() {
 
                     <h1 style={{ marginBottom: '1.5rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800, lineHeight: 1.2, letterSpacing: '-0.02em', animation: 'fadeIn 0.6s ease-out forwards', animationDelay: '0.1s', opacity: 0 }}>
                         Your Trading Journey <br />
-                        <span style={gradientTextStyle}>Begins with Maven</span>
+                        <span style={gradientTextStyle}> Begins with CoolPay </span>
                     </h1>
 
 
@@ -46,7 +46,7 @@ function Hero() {
 
                     <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '5rem', animation: 'fadeIn 0.6s ease-out forwards', animationDelay: '0.3s', opacity: 0 }}>
                         <a
-                            href="#"
+                            href="/auth/register"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
@@ -72,7 +72,7 @@ function Hero() {
                             </svg>
                         </a>
                         <a
-                            href="#about"
+                            href="#aboutsection"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
@@ -119,7 +119,6 @@ function Hero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
             </div>
-
 
         </section>
     );

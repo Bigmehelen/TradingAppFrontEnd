@@ -13,10 +13,10 @@ function Footer() {
         <footer style={{ background: 'var(--maven-bg-primary)', borderTop: '1px solid var(--maven-border)', color: 'var(--maven-text-secondary)' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '4rem 1.5rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '3rem', marginBottom: '3rem' }}>
-                    {/* Brand */}
+
                     <div>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', ...gradientTextStyle }}>
-                            Maven
+                            CoolPay
                         </h3>
                         <p style={{ fontSize: '0.875rem', marginBottom: '1.5rem', color: 'var(--maven-text-secondary)', margin: '0 0 1.5rem 0' }}>
                             Your trusted partner in prop trading. Start your journey to becoming a funded trader today.
@@ -52,34 +52,33 @@ function Footer() {
                         </div>
                     </div>
 
-                    {/* Quick Links */}
+
                     <div>
                         <h4 style={{ fontWeight: 600, marginBottom: '1rem', color: 'var(--maven-text-primary)' }}>Quick Links</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', listStyle: 'none', padding: 0, margin: 0 }}>
                             <li>
+                                <a href="#contact" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#pricing" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
+                                    Pricing
+                                </a>
+                            </li>
+                            <li>
                                 <a href="#challenges" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
-                                    Challenges
+                                    FAQ
                                 </a>
                             </li>
                             <li>
-                                <a href="#how-it-works" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
-                                    How It Works
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#testimonials" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
-                                    Testimonials
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#about" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
+                                <a href="#aboutsection" style={{ fontSize: '0.875rem', transition: 'color 0.3s', textDecoration: 'none', color: 'var(--maven-text-secondary)' }}>
                                     About Us
                                 </a>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Resources */}
                     <div>
                         <h4 style={{ fontWeight: 600, marginBottom: '1rem', color: 'var(--maven-text-primary)' }}>Resources</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', listStyle: 'none', padding: 0, margin: 0 }}>
@@ -106,7 +105,6 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal */}
                     <div>
                         <h4 style={{ fontWeight: 600, marginBottom: '1rem', color: 'var(--maven-text-primary)' }}>Legal</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', listStyle: 'none', padding: 0, margin: 0 }}>
@@ -134,14 +132,15 @@ function Footer() {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
+
                 <div style={{ paddingTop: '2rem', borderTop: '1px solid var(--maven-border)' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
                         <p style={{ fontSize: '0.875rem', color: 'var(--maven-text-muted)', margin: 0 }}>
-                            © 2024 Maven. All rights reserved.
+                            © {new Date().getFullYear()} CoolPay. All rights reserved.
                         </p>
                         <p style={{ fontSize: '0.75rem', maxWidth: '42rem', textAlign: 'center', color: 'var(--maven-text-muted)', margin: 0 }}>
-                            Trading involves risk. All trading is simulated and for educational purposes only.
+                            Trade smarter, Learn deeper, Grow consistently. <br />
+                             Practice risk-free, Learn with purpose.
                         </p>
                     </div>
                 </div>

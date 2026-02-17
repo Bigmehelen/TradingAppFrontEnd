@@ -52,7 +52,7 @@ function FinalCTA() {
                             Choose Your Challenge
                         </a>
                         <a
-                            href="#about"
+                            href="#aboutsection"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
