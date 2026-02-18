@@ -100,22 +100,9 @@ function ProcessSteps() {
 
                 <div style={{ textAlign: 'center', marginTop: '3rem' }}>
                     <a
-                        href="#challenges"
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '0.5rem',
-                            padding: '1rem 2.5rem',
-                            fontSize: '1rem',
-                            fontWeight: 600,
-                            borderRadius: '9999px',
-                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                            cursor: 'pointer',
-                            border: 'none',
-                            textDecoration: 'none',
-                            whiteSpace: 'nowrap',
-                            boxShadow: '0 4px 20px rgba(0, 212, 255, 0.3)'
+                        href="#challenges" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+                            padding: '1rem 2.5rem', fontSize: '1rem', fontWeight: 600, borderRadius: '9999px', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            cursor: 'pointer', border: 'none', textDecoration: 'none', whiteSpace: 'nowrap', boxShadow: '0 4px 20px rgba(0, 212, 255, 0.3)'
                         }}
                         className="btn-primary"
                     >

@@ -27,16 +27,8 @@ function Header({ onContactClick }) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '5rem' }}>
 
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <a
-              href="#hero"
-              style={{
-                fontSize: '1.5rem',
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textDecoration: 'none'
+            <a href="#Top" style={{ fontSize: '1.5rem', fontWeight: 700, background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)',
+                WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', textDecoration: 'none'
               }}
             >
               CoolPay

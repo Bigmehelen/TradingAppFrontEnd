@@ -58,23 +58,9 @@ function ChallengeCard({ type, badge, accountSizes, features, popular }) {
             </ul>
 
             <a
-                href="#get-started"
-                style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    padding: '1rem 2.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    borderRadius: '9999px',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'pointer',
-                    border: popular ? 'none' : '2px solid var(--maven-border)',
-                    textDecoration: 'none',
-                    whiteSpace: 'nowrap',
-                    width: '100%',
-                    boxShadow: popular ? '0 4px 20px rgba(0, 212, 255, 0.3)' : 'none'
+                href="#get-started" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '1rem 2.5rem',
+                    fontSize: '1rem', fontWeight: 600, borderRadius: '9999px', transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)', cursor: 'pointer',
+                    border: popular ? 'none' : '2px solid var(--maven-border)', textDecoration: 'none', whiteSpace: 'nowrap', width: '100%', boxShadow: popular ? '0 4px 20px rgba(0, 212, 255, 0.3)' : 'none'
                 }}
                 className={popular ? "btn-primary" : "btn-secondary"}
             >
