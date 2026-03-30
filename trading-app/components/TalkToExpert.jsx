@@ -1,5 +1,4 @@
 import React from "react";
-import ChallengeCard from './ChallengeCard';
 
 function TalkToExperts() {
     const challenges = [
@@ -66,14 +65,6 @@ function TalkToExperts() {
                     <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
                         Choose your account size to begin your trading journey with us. All challenges include access to 400+ trading pairs.
                     </p>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-                    {challenges.map((challenge, index) => (
-                        <div key={index} style={{ animation: 'fadeIn 0.6s ease-out forwards', animationDelay: `${index * 0.1}s`, opacity: 0 }}>
-                            <ChallengeCard {...challenge} />
-                        </div>
-                    ))}
                 </div>
 
                 <div style={{ marginTop: '4rem', textAlign: 'center' }}>

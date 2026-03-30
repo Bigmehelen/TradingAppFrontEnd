@@ -110,6 +110,44 @@ function Pricing() {
                     </div>
 
 
+                    <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+                        <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '1.5rem', maxWidth: '50rem', margin: '0 auto', border: '2px solid var(--maven-cyan)' }}>
+                            <h3 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--maven-text-primary)' }}>
+                                Ready to scale your trading?
+                            </h3>
+                            <p style={{ marginBottom: '2rem', color: 'var(--maven-text-secondary)', fontSize: '1.125rem' }}>
+                                Our pricing options above are for your reference to see the scale of trading we support. 
+                                To officially begin, connect with one of our agents to discuss your strategy and get set up.
+                            </p>
+                            <a
+                                href="/talk-to-agent"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '0.75rem',
+                                    padding: '1.25rem 3rem',
+                                    fontSize: '1.125rem',
+                                    fontWeight: 700,
+                                    borderRadius: '9999px',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    cursor: 'pointer',
+                                    textDecoration: 'none',
+                                    whiteSpace: 'nowrap',
+                                    background: 'var(--maven-cyan)',
+                                    color: '#ffffff',
+                                    boxShadow: '0 8px 25px rgba(0, 212, 255, 0.4)'
+                                }}
+                                className="btn-primary"
+                            >
+                                Talk to an Agent to Start Trading
+                                <svg style={{ width: '1.5rem', height: '1.5rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
                     <div style={{ textAlign: 'center', marginTop: '3rem' }}>
                         <a
                             href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, transition: 'color 0.3s',

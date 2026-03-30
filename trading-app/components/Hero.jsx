@@ -72,7 +72,7 @@ function Hero() {
                             </svg>
                         </a>
                         <a
-                            href="#aboutsection"
+                            href="#pricing"
                             style={{
                                 display: 'inline-flex',
                                 alignItems: 'center',
@@ -91,7 +91,7 @@ function Hero() {
                             }}
                             className="btn-secondary"
                         >
-                            Learn More
+                            Trade Now 
                         </a>
                     </div>
 
