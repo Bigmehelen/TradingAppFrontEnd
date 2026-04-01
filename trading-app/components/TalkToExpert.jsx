@@ -66,7 +66,7 @@ function TalkToExperts() {
                         Choose your account size to begin your trading journey with us. All challenges include access to 400+ trading pairs.
                     </p>
                 </div>
-
+   
                 <div style={{ marginTop: '4rem', textAlign: 'center' }}>
                     <div className="glass-card" style={{ borderRadius: '1.5rem', padding: '2rem', maxWidth: '48rem', margin: '0 auto' }}>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1rem', color: 'var(--maven-text-primary)' }}>

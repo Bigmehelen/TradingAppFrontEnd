@@ -106,7 +106,7 @@ function Hero() {
                             <div style={{ fontSize: '0.875rem', color: 'var(--maven-text-secondary)' }}>Active Traders</div>
                         </div>
                         <div className="glass-card" style={{ padding: '2rem', borderRadius: '1.5rem' }}>
-                            <div style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '0.5rem', ...gradientTextStyle }}>10 Days</div>
+                            <div style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '0.5rem', ...gradientTextStyle }}> Every Day </div>
                             <div style={{ fontSize: '0.875rem', color: 'var(--maven-text-secondary)' }}>Payout Frequency</div>
                         </div>
                     </div>
