@@ -39,7 +39,7 @@ function Hero() {
 
 
                     <p style={{ fontSize: '1.25rem', marginBottom: '3rem', maxWidth: '48rem', margin: '0 auto 3rem auto', color: 'var(--maven-text-secondary)', animation: 'fadeIn 0.6s ease-out forwards', animationDelay: '0.2s', opacity: 0 }}>
-                        Start trading in a fully simulated environment and keep 80% of your rewards.
+                        Start trading your crypto currency and gift card in a fully simulated environment and get rewarded instantly.
                         Join the community with no hassle, just results.
                     </p>
 

@@ -9,15 +9,10 @@ function Pricing() {
     const sizes = ["$5", "$20", "$50", "$100", "$5k", "up to ", "$100k"];
 
     const handleTalkToAgent = async () => {
-        try {
-            const res = await fetch('/api/auth/session');
-            const data = await res.json();
-            if (data.isLoggedIn) {
-                router.push('/talk-to-agent');
-            } else {
-                setShowAuthModal(true);
-            }
-        } catch {
+        const token = localStorage.getItem("authToken");
+        if (token) {
+            router.push('/talk-to-agent');
+        } else {
             setShowAuthModal(true);
         }
     };
@@ -106,21 +101,21 @@ function Pricing() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </button>
-                        </div>
-                    </div>
 
-                    <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-                        <a
-                            href="#" style={{
-                                display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, transition: 'color 0.3s',
-                                color: 'var(--maven-cyan-dark)', textDecoration: 'none'
-                            }}
-                        >
-                            Join our community
-                            <svg style={{ width: '1.25rem', height: '1.25rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
-                        </a>
+                            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                                <a
+                                    href="#" style={{
+                                        display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, transition: 'color 0.3s',
+                                        color: 'var(--maven-cyan-dark)', textDecoration: 'none'
+                                    }}
+                                >
+                                    Join our community
+                                    <svg style={{ width: '1.25rem', height: '1.25rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

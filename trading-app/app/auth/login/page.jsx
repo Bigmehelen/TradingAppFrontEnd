@@ -25,27 +25,13 @@ function LoginPage() {
         }
 
         setIsLoading(true);
-        try {
-            const res = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password }),
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                setErrors({ general: data.message || 'Login failed. Please try again.' });
-                setIsLoading(false);
-                return;
-            }
-
-            // Session cookie is set by the API route — redirect to home
-            router.push('/');
-        } catch (err) {
-            setErrors({ general: 'Network error. Please check your connection.' });
+        setIsLoading(true);
+        setTimeout(() => {
+            // Mocking a login token since the API routes were removed
+            localStorage.setItem("authToken", "simulated_token_123");
             setIsLoading(false);
-        }
+            router.push('/dashboard');
+        }, 1500);
     };
 
     return (

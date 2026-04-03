@@ -55,31 +55,12 @@ function RegisterPage() {
         }
 
         setIsLoading(true);
-        try {
-            const res = await fetch('/api/auth/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: formData.name,
-                    email: formData.email,
-                    password: formData.password,
-                }),
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-                setErrors({ general: data.message || 'Registration failed. Please try again.' });
-                setIsLoading(false);
-                return;
-            }
-
-            // Session cookie set automatically — redirect to home
-            router.push('/');
-        } catch (err) {
-            setErrors({ general: 'Network error. Please check your connection.' });
+        setTimeout(() => {
+            // Mocking a registration token since the API routes were removed
+            localStorage.setItem("authToken", "simulated_token_123");
             setIsLoading(false);
-        }
+            router.push('/dashboard');
+        }, 1500);
     };
 
     return (

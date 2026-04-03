@@ -1,10 +1,16 @@
 'use client';
-import React from "react";
-import { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 function Header({ onContactClick }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.getItem('authToken'));
+  }, [pathname]);
 
   const handleSmoothScroll = (e, targetId) => {
     e.preventDefault();
@@ -53,32 +59,51 @@ function Header({ onContactClick }) {
 
 
           <div style={{ display: 'none', alignItems: 'center', gap: '1rem' }} className="desktop-cta">
-            <Link href="/auth/login" style={{
-              fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none',
-              border: '1px solid var(--maven-text-secondary)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'color 0.3s'
-            }}>
-              Login
-            </Link>
-            <Link
-              href="/auth/register"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.5rem',
-                padding: '0.5rem 1.5rem',
-                fontSize: '1rem',
-                fontWeight: 600,
-                borderRadius: '8px',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                cursor: 'pointer',
-                boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)',
-                textDecoration: 'none'
-              }}
-              className="btn-primary"
-            >
-              Get Started
-            </Link>
+            {isLoggedIn ? (
+              <>
+                <Link href="/dashboard" style={{
+                  fontSize: '0.875rem', fontWeight: 600, color: 'var(--maven-text-primary)', textDecoration: 'none',
+                  background: 'rgba(0, 212, 255, 0.1)', border: '1px solid var(--maven-cyan)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'all 0.3s'
+                }}>
+                  Dashboard
+                </Link>
+                <div style={{
+                  width: '35px', height: '35px', borderRadius: '50%', background: 'linear-gradient(135deg, var(--maven-cyan) 0%, var(--maven-purple) 100%)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 700, fontSize: '0.875rem'
+                }}>
+                  U
+                </div>
+              </>
+            ) : (
+              <>
+                <Link href="/auth/login" style={{
+                  fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none',
+                  border: '1px solid var(--maven-text-secondary)', padding: '0.5rem 1.5rem', borderRadius: '8px', transition: 'color 0.3s'
+                }}>
+                  Login
+                </Link>
+                <Link
+                  href="/auth/register"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    padding: '0.5rem 1.5rem',
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    borderRadius: '8px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)',
+                    textDecoration: 'none'
+                  }}
+                  className="btn-primary"
+                >
+                  Get Started
+                </Link>
+              </>
+            )}
           </div>
 
 
@@ -145,37 +170,53 @@ function Header({ onContactClick }) {
                 Contact Us
               </button>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '0.5rem' }}>
-                <Link
-                  href="/login"
-                  style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', padding: '0.5rem 1rem', transition: 'color 0.3s' }}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/register"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.5rem',
-                    padding: '0.5rem 1.5rem',
-                    fontSize: '1rem',
-                    fontWeight: 600,
-                    borderRadius: '8px',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    cursor: 'pointer',
-                    border: 'none',
-                    textDecoration: 'none',
-                    whiteSpace: 'nowrap',
-                    flex: 1,
-                    boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
-                  }}
-                  className="btn-primary"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Get Started
-                </Link>
+                {isLoggedIn ? (
+                  <Link
+                    href="/dashboard"
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%',
+                      padding: '0.75rem', fontSize: '1rem', fontWeight: 600, color: '#fff',
+                      background: 'var(--maven-cyan)', borderRadius: '8px', textDecoration: 'none'
+                    }}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Go to Dashboard
+                  </Link>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--maven-text-secondary)', textDecoration: 'none', border: '1px solid var(--maven-text-secondary)', borderRadius: '8px', padding: '0.5rem 1rem', transition: 'color 0.3s' }}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      href="/register"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        padding: '0.5rem 1.5rem',
+                        fontSize: '1rem',
+                        fontWeight: 600,
+                        borderRadius: '8px',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                        cursor: 'pointer',
+                        border: 'none',
+                        textDecoration: 'none',
+                        whiteSpace: 'nowrap',
+                        flex: 1,
+                        boxShadow: '0 4px 20px rgba(0, 212, 255, 0.4)'
+                      }}
+                      className="btn-primary"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Get Started
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
