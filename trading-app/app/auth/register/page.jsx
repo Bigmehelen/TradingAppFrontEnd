@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 function RegisterPage() {
+    const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -11,6 +13,7 @@ function RegisterPage() {
         agreeToTerms: false
     });
     const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (field, value) => {
         setFormData({ ...formData, [field]: value });
@@ -35,7 +38,7 @@ function RegisterPage() {
     };
     const passwordStrength = getPasswordStrength(formData.password);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const newErrors = {};
         if (!formData.name) newErrors.name = 'Name is required';
@@ -50,8 +53,33 @@ function RegisterPage() {
             setErrors(newErrors);
             return;
         }
-        console.log('Registration submitted:', formData);
-        alert('Registration simulated');
+
+        setIsLoading(true);
+        try {
+            const res = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
+                }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                setErrors({ general: data.message || 'Registration failed. Please try again.' });
+                setIsLoading(false);
+                return;
+            }
+
+            // Session cookie set automatically — redirect to home
+            router.push('/');
+        } catch (err) {
+            setErrors({ general: 'Network error. Please check your connection.' });
+            setIsLoading(false);
+        }
     };
 
     return (

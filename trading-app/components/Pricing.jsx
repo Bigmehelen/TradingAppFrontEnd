@@ -1,24 +1,37 @@
+"use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 function Pricing() {
+    const router = useRouter();
+    const [showAuthModal, setShowAuthModal] = useState(false);
 
-    const [accountSize, setAccountSize] = useState("$2k");
-    const [accountType, setAccountType] = useState("Mini");
-    const [platf, setPlatform] = useState("MetaTrader 5");
+    const sizes = ["$5", "$20", "$50", "$100", "$5k", "up to ", "$100k"];
 
-    const sizes = ["$2k", "$5k", "$10k", "$20k", "$50k", "$100k"];
-    const types = ["Standard", "Instant", "Mini"];
-    const platforms = ["MetaTrader 5", "Match Trader"];
+    const handleTalkToAgent = async () => {
+        try {
+            const res = await fetch('/api/auth/session');
+            const data = await res.json();
+            if (data.isLoggedIn) {
+                router.push('/talk-to-agent');
+            } else {
+                setShowAuthModal(true);
+            }
+        } catch {
+            setShowAuthModal(true);
+        }
+    };
 
     return (
+        <>
         <section id="testimonials" style={{ padding: '5rem 0', background: 'var(--maven-bg-secondary)' }}>
             <div style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <h2 style={{ marginBottom: '1rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                        Empower your trading with <br/> <span style={{ color: 'var(--maven-cyan)' }}> CoolPay </span> 
+                        Empower your trading with <br /> <span style={{ color: 'var(--maven-cyan)' }}> CoolPay </span>
                     </h2>
                     <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
-                        We have the industry's best pricing. Choose your <br/>funded account and begin your trading journey.
+                        We have the industry's best pricing. Choose your <br />funded account and begin your trading journey.
                     </p>
                 </div>
 
@@ -26,87 +39,35 @@ function Pricing() {
                     <h2 style={{ marginBottom: '1rem', color: 'var(--maven-text-primary)', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 400, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
                         Choose your challenge
                     </h2>
-                     <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
+                    <p style={{ fontSize: '1.25rem', maxWidth: '42rem', margin: '0 auto', color: 'var(--maven-text-secondary)' }}>
                         You can trade as much as you want, we have no time limits.
                     </p>
                 </div>
 
-                <div style={{ textAlign: 'center', marginTop: '2rem', width:'full' }}>
-                        <h2 style={{fontSize: '1rem', maxWidth: '42rem', margin: '0 auto', marginBottom:'1rem', marginTop:'1rem', color: 'var(--maven-text-primary)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.02em' }}>
-                            Choose your account size.
-                        </h2>
+                <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                    <p style={{ fontSize: '0.8rem', maxWidth: '42rem', margin: '0 auto', marginBottom: '0.75rem', marginTop: '1rem',
+                        color: 'var(--maven-text-secondary)', letterSpacing: '0.08em', textTransform: 'uppercase', fontWeight: 600 }}>
+                        Our price ranges from as low as
+                    </p>
 
-
-                    <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 items-center justify-center bg-gray-100 rounded-xl p-2">
+                    <div className="flex flex-wrap justify-center gap-3">
                         {sizes.map((size) => (
-                        <button
-                            key={size}
-                            onClick={() => setAccountSize(size)}
-                            className={`py-3 justify-between rounded-lg max-w-2xl text-sm h-10 font-semibold transition-all duration-200
-                            ${
-                            accountSize === size
-                                ? "bg-gray-600 text-white shadow-md scale-105"
-                                : "text-gray-600 hover:bg-white hover:shadow-sm"
-                            }`}
-                        >
-                            {size}
-                        </button>
+                            <span
+                                key={size}
+                                style={{
+                                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                                    padding: '0.4rem 1.25rem', borderRadius: '9999px',
+                                    fontSize: '0.9rem', fontWeight: 700,
+                                    background: 'var(--maven-bg-secondary)',
+                                    color: 'var(--maven-cyan)',
+                                    border: '1.5px solid var(--maven-cyan)',
+                                    letterSpacing: '0.02em',
+                                    boxShadow: '0 0 10px rgba(0,212,255,0.08)'
+                                }}
+                            >
+                                {size}
+                            </span>
                         ))}
-                    </div>
-
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 justify-center align-center items-center max-w-6xl gap-8">
-    
-                        <div>
-                            <h2 style={{ fontSize: '1rem', maxWidth: '42rem', margin: '0 auto', marginBottom: '2rem', marginTop: '1rem',
-                                    color: 'var(--maven-text-primary)', fontWeight: 600, lineHeight: 1.2, letterSpacing: '-0.02em'}}
-                            >
-                                Choose your account type
-                            </h2>
-
-                            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 bg-gray-100 rounded-xl p-2">
-                                {types.map((type) => (
-                                    <button
-                                        key={type} onClick={() => setAccountType(type)}
-                                        className={`py-3 rounded-lg text-sm h-10 font-semibold transition-all duration-200
-                                        ${
-                                            accountType === type
-                                                ? "bg-gray-600 text-white shadow-md scale-105"
-                                                : "text-gray-600 hover:bg-white hover:shadow-sm"
-                                        }`}
-                                    >
-                                        {type}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <h2 style={{ fontSize: '1rem', maxWidth: '42rem', margin: '0 auto', marginBottom: '2rem', marginTop: '1rem',
-                                    color: 'var(--maven-text-primary)', fontWeight:600, lineHeight: 1.2,letterSpacing: '-0.02em'}}
-                            >
-                                Choose your favorite platform to trade
-                            </h2>
-
-                            <div className="grid grid-cols-3 sm:grid-cols-6 gap-3 bg-gray-100 rounded-xl p-2">
-                                {platforms.map((platform) => (
-                                    <button
-                                        key={platform}
-                                        onClick={() => setPlatform(platform)}
-                                        className={`py-3 rounded-lg h-10 text-sm font-semibold transition-all duration-200
-                                        ${
-                                            platf === platform
-                                                ? "bg-gray-600 text-white shadow-md scale-105"
-                                                : "text-gray-600 hover:bg-white hover:shadow-sm"
-                                        }`}
-                                    >
-                                        {platform}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
                     </div>
 
 
@@ -116,23 +77,23 @@ function Pricing() {
                                 Ready to scale your trading?
                             </h3>
                             <p style={{ marginBottom: '2rem', color: 'var(--maven-text-secondary)', fontSize: '1.125rem' }}>
-                                Our pricing options above are for your reference to see the scale of trading we support. 
+                                Our pricing options above are for your reference to see the scale of trading we support.
                                 To officially begin, connect with one of our agents to discuss your strategy and get set up.
                             </p>
-                            <a
-                                href="/talk-to-agent"
+                            <button
+                                onClick={handleTalkToAgent}
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     gap: '0.75rem',
-                                    padding: '1.25rem 3rem',
+                                    padding: '1.25rem 1.5rem',
                                     fontSize: '1.125rem',
                                     fontWeight: 700,
                                     borderRadius: '9999px',
                                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                     cursor: 'pointer',
-                                    textDecoration: 'none',
+                                    border: 'none',
                                     whiteSpace: 'nowrap',
                                     background: 'var(--maven-cyan)',
                                     color: '#ffffff',
@@ -144,14 +105,16 @@ function Pricing() {
                                 <svg style={{ width: '1.5rem', height: '1.5rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
                     <div style={{ textAlign: 'center', marginTop: '3rem' }}>
                         <a
-                            href="#" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, transition: 'color 0.3s',
-                                color: 'var(--maven-cyan-dark)', textDecoration: 'none' }}
+                            href="#" style={{
+                                display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, transition: 'color 0.3s',
+                                color: 'var(--maven-cyan-dark)', textDecoration: 'none'
+                            }}
                         >
                             Join our community
                             <svg style={{ width: '1.25rem', height: '1.25rem' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -162,6 +125,82 @@ function Pricing() {
                 </div>
             </div>
         </section>
+
+            {/* Auth Guard Modal */}
+            {showAuthModal && (
+                <div style={{
+                    position: 'fixed', inset: 0, zIndex: 1000,
+                    background: 'rgba(0,0,0,0.7)', backdropFilter: 'blur(6px)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem'
+                }}
+                    onClick={() => setShowAuthModal(false)}
+                >
+                    <div
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                            background: 'var(--maven-bg-secondary)', borderRadius: '1.5rem',
+                            padding: '2.5rem', maxWidth: '26rem', width: '100%',
+                            border: '1.5px solid var(--maven-cyan)',
+                            boxShadow: '0 25px 60px rgba(0,212,255,0.15)',
+                            textAlign: 'center'
+                        }}
+                    >
+                        {/* Lock icon */}
+                        <div style={{
+                            width: '3.5rem', height: '3.5rem', borderRadius: '50%',
+                            background: 'rgba(0,212,255,0.1)', border: '1.5px solid var(--maven-cyan)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            margin: '0 auto 1.25rem'
+                        }}>
+                            <svg width="24" height="24" fill="none" stroke="var(--maven-cyan)" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+
+                        <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--maven-text-primary)' }}>
+                            Account Required
+                        </h3>
+                        <p style={{ color: 'var(--maven-text-secondary)', marginBottom: '2rem', lineHeight: 1.6 }}>
+                            You need to be logged in to talk to an agent and start trading. Please sign in or create a free account.
+                        </p>
+
+                        <div style={{ display: 'flex', gap: '0.75rem', flexDirection: 'column' }}>
+                            <a href="/auth/login"
+                                style={{
+                                    display: 'block', padding: '0.9rem 1.5rem', borderRadius: '9999px',
+                                    background: 'var(--maven-cyan)', color: '#fff',
+                                    fontWeight: 700, fontSize: '1rem', textDecoration: 'none',
+                                    boxShadow: '0 4px 15px rgba(0,212,255,0.35)'
+                                }}
+                            >
+                                Log In
+                            </a>
+                            <a href="/auth/register"
+                                style={{
+                                    display: 'block', padding: '0.9rem 1.5rem', borderRadius: '9999px',
+                                    background: 'transparent', color: 'var(--maven-cyan)',
+                                    fontWeight: 700, fontSize: '1rem', textDecoration: 'none',
+                                    border: '1.5px solid var(--maven-cyan)'
+                                }}
+                            >
+                                Create Account
+                            </a>
+                            <button
+                                onClick={() => setShowAuthModal(false)}
+                                style={{
+                                    background: 'none', border: 'none', cursor: 'pointer',
+                                    color: 'var(--maven-text-secondary)', fontSize: '0.9rem',
+                                    marginTop: '0.25rem'
+                                }}
+                            >
+                                Maybe later
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </>
     );
 }
 export default Pricing;

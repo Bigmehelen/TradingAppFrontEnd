@@ -25,11 +25,27 @@ function LoginPage() {
         }
 
         setIsLoading(true);
-        setTimeout(() => {
-            console.log('Login submitted:', { email, password, rememberMe });
-            setIsLoading(false);
+        try {
+            const res = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                setErrors({ general: data.message || 'Login failed. Please try again.' });
+                setIsLoading(false);
+                return;
+            }
+
+            // Session cookie is set by the API route — redirect to home
             router.push('/');
-        }, 1500);
+        } catch (err) {
+            setErrors({ general: 'Network error. Please check your connection.' });
+            setIsLoading(false);
+        }
     };
 
     return (
